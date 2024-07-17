@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>practise page</title>
+		<style>
+			button
+			{
+				color: aqua;
+			}
+			/*
+			this is css comment
+			*/
+		</style>
+	</head>
+	<body>
+		<!--hello so this is a html comment-->
+        <h2>Rock-scissor-game</h2>
+		<p>
+            <button onclick="rock()">Rock</button>
+            <button>Paper</button>
+            <button>Scissor</button>
+        </p>
+		<script>
+            let testWord = 2;
+            JSON.stringify(testWord)
+            console.log(testWord);
+            localStorage.setItem('abra',testWord+2);
+            console.log(localStorage.getItem('abra'));
+            
+			function rock()
+            {
+                cpudecides=['scissor','rock','paper']
+                var containNumber = getRandomInt(3);
+                if(cpudecides[containNumber] ==arguments[0])
+                {
+                    console.log(`It's a tie. CPU chose ${cpudecides[containNumber]}`);
+                }
+                else if(cpudecides[containNumber-1]==arguments[0])
+                {
+                    console.log("You are the winnner");
+                }
+                else
+                {
+                    console.log("CPU wins.")
+                }
+            }
+            function getRandomInt(max)
+            {
+                return Math.floor(Math.random()*max);
+            }
+		</script>
+	</body>
+
+</html>

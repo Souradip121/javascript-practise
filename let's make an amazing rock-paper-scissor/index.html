@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+<title>
+    rock-paper-scissor
+</title>
+</head>
+<body>
+    <p>
+        Your move
+    </p>
+    <p>
+        <button onclick="document.querySelector('.gameStatus').innerText=rock()
+        document.querySelector('.yourScore').innerText=`win: ${score.win}`
+        ">Rock</button>
+        <button onclick="paper()">Paper</button>
+        <button onclick="scissor()">Scissor</button>
+    </p>
+    <p class="gameStatus">
+
+    </p>
+    <p>
+        Your Score: 
+    </p>
+    <p class="yourScore">
+
+    </p>
+
+    <script>
+        let win = 0;
+        let loss = 0;
+        let draw = 0;
+        const score = {win,loss,draw};
+        function rock()
+        {
+            let move = cpuMove();
+            if(move==='rock'){
+                score.draw+=1;
+                return 'It is a draw';
+            }
+            else if(move=='paper')
+            {
+                score.loss+=1;
+                return 'CPU Wins. You lose';
+            }
+            else
+            {
+                score.win+=1;
+                return 'You win!!! Congratulations!!!';
+            }
+        }
+        function paper()
+        {
+            let move = cpuMove();
+            if(move==='paper'){
+                return 'draw';
+            }
+            else if(move=='scissor')
+            {
+                return 'loss';
+            }
+            else
+            {
+                return 'win';
+            }
+        }
+        function scissor()
+        {
+            let move = cpuMove();
+            if(move==='scissor'){
+                return 'draw';
+            }
+            else if(move=='rock')
+            {
+                return 'loss';
+            }
+            else
+            {
+                return 'win';
+            }
+        }
+        function cpuMove(){
+            let random = Math.floor(Math.random()*3);
+            if (random  === 0){
+                return 'rock';
+            }
+            else if(random === 1){
+                return 'paper';
+            }
+            else{
+                return 'scissor';
+            }
+            
+        }
+    </script>
+</body>
